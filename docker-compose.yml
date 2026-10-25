@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  qr-camera-demo:
+    build: .
+    container_name: qr-camera-demo-app
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8083:3000"
+    volumes:
+      - ./captured:/app/captured
+    environment:
+      - PORT=3000
